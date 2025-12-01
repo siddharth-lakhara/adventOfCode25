@@ -15,8 +15,6 @@ class Solution {
 
 int main() {
   Solution solution;
-
-  // call s.solve();
   solution.solve();
   
   return 0;
