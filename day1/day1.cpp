@@ -32,18 +32,16 @@ class Solution {
         int multiplier = instruction.at(0) == 'L' ? -1 : 1;
         int adder = stoi(instruction.substr(1));
         
-        int delta = (multiplier*adder);
-        pos += delta;
-        count += abs(pos/100);
-
-        pos %= 100;
-        if (pos < 0) {
-          pos = 100+pos;
-          count++;
+        int start_pos = pos;
+        if (multiplier == -1) {
+          count += (start_pos + adder) / 100;
+        } else {
+          count += (adder + 99 - start_pos) / 100;
         }
 
-        if (pos == 0 && delta < 0) {
-          count++;
+        pos = (pos + multiplier*adder)%100;
+        if (pos < 0) {
+          pos += 100;
         }
       }
 
