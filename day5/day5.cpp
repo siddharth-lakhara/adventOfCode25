@@ -5,8 +5,6 @@
 
 using namespace std;
 
-// 666 - low
-
 class Solution {
 public:
     void part1() {
